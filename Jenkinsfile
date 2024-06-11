@@ -22,7 +22,7 @@ pipeline {
         agent {label 'raspi'}
         options { skipDefaultCheckout() }
         steps {
-            sh 'echo load binaries to do something on the raspberry pi'
+            sh 'cd /home/easymetering/esp-serial/ && sudo ./system.sh'
         }
         post {
             success {
