@@ -1,5 +1,17 @@
 pipeline{
-agent 
+agent any
+stages {
+  stage('input'){
+    agent {label 'raspi'}
+    steps{
+        input(mensaje:"Information chip")
+    sh '''
+      cd /home/easymetering/esp-serial/ && sudo ./script_tess.sh
+      cat  informacion_chip.txt
+      '''
+    }
+  }
+}
 
   
 }
