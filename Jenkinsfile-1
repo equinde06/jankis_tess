@@ -5,7 +5,7 @@ stages {
     agent {label 'raspi'}
     steps{
         input(message:"Information chip")
-    sh 'cd /home/easymetering/esp-serial/ && sudo ./system.sh'
+    sh 'cd /home/easymetering/esp-serial/ && sudo ./script_tess.sh'
     }
   }
 }
