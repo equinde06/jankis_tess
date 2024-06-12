@@ -4,7 +4,7 @@ stages {
   stage('input'){
     agent {label 'raspi'}
     steps{
-        input(mensaje:"Information chip")
+        input(message:"Information chip")
     sh '''
       cd /home/easymetering/esp-serial/ && sudo ./script_tess.sh
       cat  informacion_chip.txt
