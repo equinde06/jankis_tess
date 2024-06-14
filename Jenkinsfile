@@ -23,15 +23,7 @@ pipeline {
         options { skipDefaultCheckout() }
         steps {
             sh '''
-            cd /home/easymetering/esp-serial/ 
-            echo "Inicio de Mergue "
-            source raspi/bin/activate
-            cd examples/raspberry_example/
-            mkdir build && cd build
-            cmake .. && cmake --build .
-            cd ../../binaries/app/
-            sudo chmod u+rw merged-flash.bin  
-            echo "Inicio de Flash"
+            cd /home/easymetering/esp-serial/  && sudo ./system.sh
             cd ../../raspberry_example/build/
             sudo ./raspberry_flasher
             cd ..
