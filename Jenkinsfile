@@ -24,7 +24,7 @@ pipeline {
                 script {
                     def output = sh(script: 'cd /home/easymetering/esp-serial/  && sudo ./system.sh', returnStdout: true).trim()
                     
-                    if (output.contains("Error") || output.contains("failed")) {
+                    if (output.contains("Error") || output.contains("failed") || output.contains("error") ) {
                         error("Output: '${output}'")
                     } else {
                         echo "Output: '${output}'"
