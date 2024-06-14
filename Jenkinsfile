@@ -22,7 +22,17 @@ pipeline {
         agent {label 'raspi'}
         options { skipDefaultCheckout() }
         steps {
-            sh 'cd /home/easymetering/esp-serial/  && sudo ./system.sh'
+               
+                // Ejecutar el comando y guardar la salida en una variable
+                script {
+                    def output = sh(script: 'cd /home/easymetering/esp-serial/  && sudo ./system.sh', returnStdout: true).trim()
+                    
+                    // Verificar si la salida contiene la palabra "Error"
+                    if (output.contains("Error") | output.contains("failed") {
+                      error("Se encontró un error en la salida del comando.")
+                    } else {
+                        echo "Sucess."
+                    }
         }
         post {
             success {
