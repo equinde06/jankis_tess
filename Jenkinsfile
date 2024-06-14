@@ -22,11 +22,7 @@ pipeline {
         agent {label 'raspi'}
         options { skipDefaultCheckout() }
         steps {
-            sh '''
-            cd /home/easymetering/esp-serial/  && sudo ./system.sh
-            cd examples/raspberry_example/build/
-            sudo ./raspberry_flasher
-            '''
+            sh 'cd /home/easymetering/esp-serial/  && sudo ./system.sh'
         }
         post {
             success {
