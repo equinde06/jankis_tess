@@ -24,11 +24,11 @@ pipeline {
         steps {
             sh '''
             cd /home/easymetering/esp-serial/  && sudo ./system.sh
-            cd ../../raspberry_example/build/
+            cd /home/easymetering/esp-serial/raspberry_example/build/
             sudo ./raspberry_flasher
             cd ..
             sudo rm -r build
-            cd ../binaries/app/
+            cd /home/easymetering/esp-serial/ binaries/app/
             sudo rm merged-flash.bin
             deactivate
             '''
