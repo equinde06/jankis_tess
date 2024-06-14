@@ -24,6 +24,7 @@ pipeline {
         steps {
             sh '''
             cd /home/easymetering/esp-serial/  && sudo ./system.sh
+            pwd
             cd /home/easymetering/esp-serial/raspberry_example/build/
             sudo ./raspberry_flasher
             cd ..
