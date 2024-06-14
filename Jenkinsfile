@@ -2,7 +2,7 @@ pipeline {
     agent none
     stages {
         stage('build') {
-            agent { label 'local' }
+            agent { label 'pc' }
             steps {
                 sh 'docker run --rm -v $WORKSPACE:/project -w /project espressif/idf:v4.4.2 idf.py build'
                 stash name: "build-binaries", includes: "build/bootloader/*.bin, build/partition_table/*.bin, build/*.bin"
