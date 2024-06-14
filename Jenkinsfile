@@ -39,7 +39,7 @@ pipeline {
             cd ../binaries/app/
             sudo rm merged-flash.bin
             deactivate
-            ''''
+            '''
         }
         post {
             success {
