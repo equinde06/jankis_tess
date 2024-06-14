@@ -34,7 +34,7 @@ pipeline {
             post {
                 success {
                     script {
-                    def output1 = sh(script: 'cd /home/easymetering/esp-serial/  && sudo ./log.py', returnStdout: true).trim()
+                    def output1 = sh(script: 'cd /home/easymetering/esp-serial/  && sudo ./log.sh', returnStdout: true).trim()
                     
                     if (output1.contains("Traceback") || output1.contains("[ERR]")) {
                         error("Output: '${output1}'")
