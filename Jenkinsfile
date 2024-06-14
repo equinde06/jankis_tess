@@ -26,11 +26,6 @@ pipeline {
             cd /home/easymetering/esp-serial/  && sudo ./system.sh
             cd examples/raspberry_example/build/
             sudo ./raspberry_flasher
-            cd ..
-            sudo rm -r build
-            cd /home/easymetering/esp-serial/ binaries/app/
-            sudo rm merged-flash.bin
-            deactivate
             '''
         }
         post {
