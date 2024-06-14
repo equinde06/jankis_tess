@@ -28,8 +28,8 @@ pipeline {
                     def output = sh(script: 'cd /home/easymetering/esp-serial/  && sudo ./system.sh', returnStdout: true).trim()
                     
                     // Verificar si la salida contiene la palabra "Error"
-                    if (output.contains("Error") || output.contains("failed") {
-                      error("Se encontró un error en la salida del comando.")
+                    if (output.contains("Error") || output.contains("failed") ){
+                        error("Se encontró un error en la salida del comando.")
                     } else {
                         echo "Sucess."
                     }
