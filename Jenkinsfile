@@ -22,7 +22,7 @@ pipeline {
         agent {label 'raspi'}
         options { skipDefaultCheckout() }
         steps {
-            sh 'cd /home/easymetering/esp-serial/ && sudo ./system.sh'
+            sh 'task.sh'
         }
         post {
             success {
