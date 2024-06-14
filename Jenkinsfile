@@ -33,7 +33,15 @@ pipeline {
             }
             post {
                 success {
-                    sh 'echo Running tests'
+                    script {
+                    def output1 = sh(script: 'cd /home/easymetering/esp-serial/  && sudo python3 log_parser.py', returnStdout: true).trim()
+                    
+                    if (output.contains("Error") || output.contains("failed")) {
+                        error("Output: '${output}'")
+                    } else {
+                        echo "Output: '${output}'"
+                    }
+                }
                 }
             }
         }
