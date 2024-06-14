@@ -23,7 +23,7 @@ pipeline {
         options { skipDefaultCheckout() }
         steps {
             sh '''
-            cd /home/easymetering/esp-serial/ && sudo ./script_tess.sh
+            cd /home/easymetering/esp-serial/ 
             echo "Inicio de Mergue "
             source raspi/bin/activate
             cd examples/raspberry_example/
