@@ -15,7 +15,7 @@
 
 void app_main(void)
 {
-    printf("[ERR]\n");
+    printf("[Hi]\n");
 
     /* Print chip information */
     esp_chip_info_t chip_info;
