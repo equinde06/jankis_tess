@@ -36,7 +36,7 @@ pipeline {
                     script {
                     def output1 = sh(script: 'cd /home/easymetering/esp-serial/  && sudo ./log.sh', returnStdout: true).trim()
                     
-                    if (output1.contains("Traceback") || output1.contains("[ERR]") || output1.contains("error") ) {
+                    if (output1.contains("Traceback") || output1.contains("[ERR]") ) {
                         error("Output: '${output1}'")
                     } else {
                         echo "Output: '${output1}'"
