@@ -43,7 +43,7 @@ void app_main(void)
         int valor = 10;
         print_serial_log("El valor es: %d", valor);
         print_serial_log_warning("Esto es una advertencia.");
-        //print_serial_log_error("Esto es un error");
+        print_serial_log_error("Esto es un error");
 
 
         /*if (counter >= error_threshold) {
