@@ -3,6 +3,8 @@
 # project subdirectory.
 #
 
-PROJECT_NAME := hello_world
+PROJECT_NAME := blink
+
+EXTRA_COMPONENT_DIRS = $(IDF_PATH)/examples/common_components/led_strip
 
 include $(IDF_PATH)/make/project.mk
