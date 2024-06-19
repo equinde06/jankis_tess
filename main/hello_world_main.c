@@ -34,7 +34,7 @@
 
 void app_main(void)
 {
-    print_serial_log_error("Esto es un error");
+    print_serial_log("Esto es éxito");
 
     /* Print chip information */
     esp_chip_info_t chip_info;
